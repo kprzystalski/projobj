@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_b6e6ce9a00f6412db3371f94a552570e }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_b96718421f83466d99bece2d9fa5b154 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_e192a30ba57c4eb2869004ffb8c3635d }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_8cba29ac248f4026bdbc7d459c19490b }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b6e6ce9a00f6412db3371f94a552570e }}/kprzystalski/projobj8:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e192a30ba57c4eb2869004ffb8c3635d }}/kprzystalski/projobj8:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'projobj'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_33ea009f48cb4ffaa5bff9e14ed298bf }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_b6e6ce9a00f6412db3371f94a552570e }}/kprzystalski/projobj8:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a01fa079382540d18c939286d8a9dcaf }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e192a30ba57c4eb2869004ffb8c3635d }}/kprzystalski/projobj8:${{ github.sha }}'
