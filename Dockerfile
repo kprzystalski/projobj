@@ -19,7 +19,7 @@ RUN adduser kprzystalski sudo
 USER kprzystalski
 WORKDIR /home/kprzystalski/
 
-COPY main.py /home/kprzystalski/
+COPY --chown=kprzystalski:kprzystalski main.py /home/kprzystalski/
 
 EXPOSE 80
 
