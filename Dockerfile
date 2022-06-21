@@ -13,13 +13,17 @@ RUN apt-get install -y python3 python3-pip
 
 RUN pip install flask
 
-RUN useradd -ms /bin/bash kprzystalski
-RUN adduser kprzystalski sudo
+#RUN useradd -ms /bin/bash kprzystalski
+#RUN adduser kprzystalski sudo
 
-USER kprzystalski
-WORKDIR /home/kprzystalski/
+#USER kprzystalski
+#WORKDIR /home/kprzystalski/
 
-COPY --chown=kprzystalski:kprzystalski main.py /home/kprzystalski/
+
+RUN mkdir /code
+ADD main.py /code
+
+#COPY --chown=kprzystalski:kprzystalski main.py /home/kprzystalski/
 
 EXPOSE 80
 
