@@ -24,7 +24,6 @@ COPY --chown=kprzystalski:kprzystalski main.py /home/kprzystalski/
 EXPOSE 80
 
 ENV FLASK_APP=/home/kprzystalski/main.py
-ENV FLASK_ENV=production
 
 CMD flask run --host=0.0.0.0 --port=80 
 
