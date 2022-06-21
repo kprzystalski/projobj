@@ -27,7 +27,7 @@ ADD main.py /code
 
 EXPOSE 80
 
-ENV FLASK_APP=/home/kprzystalski/main.py
+ENV FLASK_APP=/code/main.py
 
 CMD flask run --host=0.0.0.0 --port=80 
 
